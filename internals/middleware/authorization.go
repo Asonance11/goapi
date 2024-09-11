@@ -5,7 +5,7 @@ import (
 	"net/http"
 
 	"github.com/Asonance11/goapi/api"
-	"github.com/Asonance11/goapi/internal/tools"
+	"github.com/Asonance11/goapi/internals/tools"
 	log "github.com/sirupsen/logrus"
 )
 
@@ -34,7 +34,7 @@ func Authorization(next http.Handler) http.Handler {
 		var loginDetails *tools.LoginDetails
 		loginDetails = (*database).GetUserLoginDetails(username)
 
-		if loginDetails == nil || (token != (*loginDetails).authToken) {
+		if loginDetails == nil || (token != (*loginDetails).AuthToken) {
 			log.Error(UnAuthorizedError)
 			api.RequestErrorHandler(w, UnAuthorizedError)
 			return

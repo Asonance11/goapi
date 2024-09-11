@@ -1,7 +1,7 @@
 package handlers
 
 import (
-	"github.com/Asonance11/goapi/internal/middleware"
+	"github.com/Asonance11/goapi/internals/middleware"
 	"github.com/go-chi/chi/v5"
 	chimiddle "github.com/go-chi/chi/v5/middleware"
 )
